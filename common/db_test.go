@@ -5,7 +5,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/rachel-lawrie/verus_backend_core/config"
+	"github.com/rachel-lawrie/verus_backend_core/models"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
 	"go.mongodb.org/mongo-driver/mongo"
@@ -37,7 +37,7 @@ func (m *MockCollection) Find(ctx context.Context, filter interface{}, opts ...*
 }
 
 func TestConnectDatabase(t *testing.T) {
-	cfg := config.DatabaseConfig{
+	cfg := models.DatabaseConfig{
 		User:     "testuser",
 		Password: "testpassword",
 		Host:     "localhost",
@@ -58,7 +58,7 @@ func TestConnectDatabase(t *testing.T) {
 }
 
 func TestGetCollection(t *testing.T) {
-	cfg := config.DatabaseConfig{
+	cfg := models.DatabaseConfig{
 		User:     "testuser",
 		Password: "testpassword",
 		Host:     "localhost",

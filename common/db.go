@@ -9,7 +9,7 @@ import (
 	"github.com/rachel-lawrie/verus_backend_core/zaplogger"
 
 	"github.com/patrickmn/go-cache"
-	"github.com/rachel-lawrie/verus_backend_core/config"
+	"github.com/rachel-lawrie/verus_backend_core/models"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 	"go.uber.org/zap"
@@ -37,7 +37,7 @@ type SingoleResultInterface interface {
 	// Add other methods as needed
 }
 
-func ConnectDatabase(cfg config.DatabaseConfig) error {
+func ConnectDatabase(cfg models.DatabaseConfig) error {
 	cacheStore = cache.New(time.Duration(cfg.CacheExpirationMins)*time.Minute, time.Duration(cfg.CacheCleanupIntervalMins)*time.Minute) // CacheExpirationMins-minute TTL, CacheCleanupIntervalMins-minute cleanup interval
 
 	var mongoURI string

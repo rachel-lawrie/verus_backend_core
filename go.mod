@@ -1,6 +1,6 @@
 module github.com/rachel-lawrie/verus_backend_core
 
-go 1.23.4
+go 1.23
 
 require (
 	github.com/aws/aws-sdk-go-v2 v1.36.2
